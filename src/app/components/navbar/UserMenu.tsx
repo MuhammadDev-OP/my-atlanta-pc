@@ -67,7 +67,7 @@ export const UserMenu = () => {
         absolute
         rounded-xl
         py-2
-        shadow-md
+        drop-shadow-md 
         w-[40vw]
         md:w-3/4
         bg-white
@@ -75,6 +75,8 @@ export const UserMenu = () => {
         right-0
         top-12
         text-sm
+        
+        
         "
         >
           <div className="flex flex-col cursor-pointer">
