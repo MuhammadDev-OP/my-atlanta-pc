@@ -1,29 +1,33 @@
 'use client';
 import { AiOutlineMenu } from "react-icons/ai";
-import { Avatar } from "../Avatar";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import RegisterModal from "../modals/RegisterModal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { SafeUser } from "@/app/types";
+import Avatar from "../Avatar";
+import useRentModal from "@/app/hooks/useRentModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
 }
 
-export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
+const UserMenu: React.FC<UserMenuProps> = ({
+   currentUser
+   }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value);
   }, []);
-  //  const router = useRouter();
+  const router = useRouter();
 
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal();
 
 
   return (
@@ -35,7 +39,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             flex-row gap-3"
       >
         <div
-          onClick={() => {}}
+          onClick={rentModal.onOpen}
           className="
           hidden
           md:block
@@ -48,7 +52,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             cursor-pointer
             transition"
         >
-          airAtlanta Your Home
+          AirAtlanta Your Home
         </div>
         <div
           onClick={toggleOpen}
@@ -67,7 +71,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         >
           <AiOutlineMenu />
           <div className="hidden md:block">
-            <Avatar />
+            <Avatar src={undefined} />
           </div>
         </div>
       </div>
@@ -90,7 +94,7 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         "
         >
           <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
+           {currentUser ? (
               <>
                 <MenuItem onClick={() => {}} label="My Trips" />
                 <MenuItem onClick={() => {}} label="My Favorites" />
@@ -112,3 +116,6 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     </div>
   );
 };
+
+
+export default UserMenu;
