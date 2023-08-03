@@ -1,5 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![SS2](https://github.com/MuhammadDev-OP/my-atlanta-pc/assets/85152396/eb1c7f02-c4de-443d-bdc1-20b2ef2da943)
+![SS1](https://github.com/MuhammadDev-OP/my-atlanta-pc/assets/85152396/cf5eafa6-72d8-42d8-b9d5-57f96c38b301)
+![SS3](https://github.com/MuhammadDev-OP/my-atlanta-pc/assets/85152396/2ec9406b-1d29-48f7-a10b-86200ac16050)
 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 ## Getting Started
 
 First, run the development server:
