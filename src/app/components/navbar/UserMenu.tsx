@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
@@ -15,9 +15,7 @@ interface UserMenuProps {
   currentUser?: SafeUser | null;
 }
 
-const UserMenu: React.FC<UserMenuProps> = ({
-   currentUser
-   }) => {
+const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
@@ -28,7 +26,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
-
 
   return (
     <div className="relative">
@@ -94,12 +91,24 @@ const UserMenu: React.FC<UserMenuProps> = ({
         "
         >
           <div className="flex flex-col cursor-pointer">
-           {currentUser ? (
+            {currentUser ? (
               <>
-                <MenuItem onClick={() => router.push("/trips")} label="My Trips" />
-                <MenuItem onClick={() => router.push("/favorites")} label="My Favorites" />
-                <MenuItem onClick={() => router.push("/reservations")} label="My Reservations" />
-                <MenuItem onClick={() => router.push("/properties")} label="My Properties" />
+                <MenuItem
+                  onClick={() => router.push("/trips")}
+                  label="My Trips"
+                />
+                <MenuItem
+                  onClick={() => router.push("/favorites")}
+                  label="My Favorites"
+                />
+                <MenuItem
+                  onClick={() => router.push("/reservations")}
+                  label="My Reservations"
+                />
+                <MenuItem
+                  onClick={() => router.push("/properties")}
+                  label="My Properties"
+                />
                 <MenuItem onClick={() => {}} label="AirAtlanta My Spot" />
                 <hr />
                 <MenuItem onClick={() => signOut()} label="logout" />
@@ -116,6 +125,5 @@ const UserMenu: React.FC<UserMenuProps> = ({
     </div>
   );
 };
-
 
 export default UserMenu;
