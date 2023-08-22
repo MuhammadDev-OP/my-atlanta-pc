@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
-/pages\api\auth
+/pages/api/auth
 .pnp.js
 
 # testing
